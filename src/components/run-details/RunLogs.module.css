@@ -1,0 +1,58 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.count {
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-strong);
+  color: var(--color-text-muted);
+}
+
+/* Тёмный терминал, как в блоке исполнения на сайте Runforge */
+.logs {
+  padding: var(--space-3) 0;
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: #dfe6ef;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  line-height: 1.7;
+  counter-reset: log-line;
+}
+
+.line {
+  display: grid;
+  grid-template-columns: 2.5ch minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: 0 var(--space-4);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  counter-increment: log-line;
+}
+
+.line::before {
+  content: counter(log-line);
+  color: #6f819a;
+  text-align: right;
+  user-select: none;
+}
+
+.empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

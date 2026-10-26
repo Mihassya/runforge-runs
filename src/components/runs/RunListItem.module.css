@@ -1,0 +1,125 @@
+.row {
+  display: grid;
+  grid-template-columns: var(--runs-columns);
+  grid-template-areas: 'run source status created duration';
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.row:hover {
+  background: var(--color-surface-muted);
+}
+
+.row:focus-visible {
+  outline-offset: -2px;
+}
+
+.run,
+.source {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.run {
+  grid-area: run;
+}
+
+.source {
+  grid-area: source;
+}
+
+.status {
+  grid-area: status;
+}
+
+.created {
+  grid-area: created;
+}
+
+.duration {
+  grid-area: duration;
+  text-align: right;
+}
+
+.name {
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.id,
+.branch {
+  overflow: hidden;
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repository {
+  font-size: var(--font-size-sm);
+}
+
+.branch {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.created,
+.duration {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.unknown {
+  color: var(--color-text-subtle);
+}
+
+/* Подписи «Created» и «Duration» нужны только в карточках; в таблице их читает скринридер */
+.label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 859px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'run status'
+      'source source'
+      'created duration';
+    gap: var(--space-2) var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .created,
+  .duration {
+    font-size: var(--font-size-xs);
+  }
+
+  .label {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}

@@ -1,0 +1,62 @@
+/* Палитра по мотивам runforge.space: молочный фон и тёмно-синий акцент */
+:root {
+  --color-bg: #f4f1eb;
+  --color-surface: #fffdfa;
+  --color-surface-muted: #f7f4ee;
+  --color-surface-strong: #efebe4;
+  --color-border: #ded9d0;
+  --color-border-strong: #cfc8bd;
+
+  --color-text: #171716;
+  --color-text-muted: #68655f;
+  --color-text-subtle: #8b877f;
+
+  --color-accent: #081a33;
+  --color-accent-hover: #10294a;
+  --color-on-accent: #ffffff;
+  --color-focus: #2a5a85;
+
+  /* Статусы: насыщенный цвет для точки, тёмный для текста, светлый для фона */
+  --color-queued: #b07d2b;
+  --color-queued-text: #7f5714;
+  --color-queued-bg: #f8efdc;
+  --color-running: #3b74a8;
+  --color-running-text: #24527d;
+  --color-running-bg: #e6eef6;
+  --color-succeeded: #26815b;
+  --color-succeeded-text: #1c6646;
+  --color-succeeded-bg: #e3f1e9;
+  --color-failed: #b84d51;
+  --color-failed-text: #96363b;
+  --color-failed-bg: #f8e6e5;
+
+  --font-sans:
+    'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-md: 0.9375rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(34, 28, 20, 0.05);
+  --shadow-md: 0 18px 60px rgba(34, 28, 20, 0.09);
+  --shadow-lg: 0 35px 100px rgba(34, 28, 20, 0.18);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}

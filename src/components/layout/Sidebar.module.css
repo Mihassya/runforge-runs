@@ -1,0 +1,154 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  height: 100vh;
+  height: 100dvh;
+  padding: var(--space-5) var(--space-4);
+  background: var(--color-surface-muted);
+  border-right: 1px solid var(--color-border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brandName {
+  font-weight: 700;
+}
+
+.brandCaption,
+.projectLabel,
+.navLabel {
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+}
+
+.projectLabel,
+.navLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.projectName {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.navLabel {
+  padding: 0 var(--space-3);
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navItem,
+.navItemDisabled {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+.navItem {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.navItem[aria-current='page'] {
+  background: var(--color-surface-strong);
+}
+
+.navItemDisabled {
+  color: var(--color-text-subtle);
+  cursor: default;
+}
+
+.soon {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+}
+
+/* На узких экранах сайдбар превращается в верхнюю панель */
+@media (max-width: 1023px) {
+  .sidebar {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    padding: var(--space-3) var(--space-4);
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .project {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .brandCaption,
+  .projectName {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 479px) {
+  .projectLabel {
+    display: none;
+  }
+}

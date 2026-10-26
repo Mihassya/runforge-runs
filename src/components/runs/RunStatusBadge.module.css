@@ -1,0 +1,65 @@
+.badge {
+  --status-color: var(--color-text-muted);
+  --status-text: var(--color-text);
+  --status-bg: var(--color-surface-strong);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px var(--space-2);
+  border: 1px solid color-mix(in srgb, var(--status-color) 30%, transparent);
+  border-radius: var(--radius-pill);
+  background: var(--status-bg);
+  color: var(--status-text);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--status-color);
+}
+
+.badge[data-status='queued'] {
+  --status-color: var(--color-queued);
+  --status-text: var(--color-queued-text);
+  --status-bg: var(--color-queued-bg);
+}
+
+.badge[data-status='running'] {
+  --status-color: var(--color-running);
+  --status-text: var(--color-running-text);
+  --status-bg: var(--color-running-bg);
+}
+
+.badge[data-status='succeeded'] {
+  --status-color: var(--color-succeeded);
+  --status-text: var(--color-succeeded-text);
+  --status-bg: var(--color-succeeded-bg);
+}
+
+.badge[data-status='failed'] {
+  --status-color: var(--color-failed);
+  --status-text: var(--color-failed-text);
+  --status-bg: var(--color-failed-bg);
+}
+
+/* Queued — полая точка, running — пульсирующая: различие видно даже без цвета */
+.badge[data-status='queued'] .dot {
+  background: transparent;
+  border: 1.5px solid var(--status-color);
+}
+
+.badge[data-status='running'] .dot {
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--status-color) 25%, transparent);
+  }
+}
