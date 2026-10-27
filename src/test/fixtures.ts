@@ -1,0 +1,55 @@
+import type { Run } from '../types/run'
+
+// Небольшой набор запусков только для тестов: правки демо-данных в mockRuns.ts тесты не ломают
+export const testRuns: Run[] = [
+  {
+    id: 'run_1',
+    name: 'Auth refactor',
+    repository: 'web-platform',
+    branch: 'feat/auth',
+    status: 'running',
+    createdAt: '2026-10-27T09:00:00Z',
+    logs: ['Cloning web-platform'],
+  },
+  {
+    id: 'run_2',
+    name: 'Fix checkout tests',
+    repository: 'payments',
+    branch: 'fix/checkout',
+    status: 'succeeded',
+    createdAt: '2026-10-26T09:00:00Z',
+    durationSeconds: 754,
+    logs: ['npm ci', 'Tests: 184 passed'],
+    result: 'All 184 tests passed.',
+  },
+  {
+    id: 'run_3',
+    name: 'Update dependencies',
+    repository: 'api-service',
+    branch: 'chore/deps',
+    status: 'queued',
+    createdAt: '2026-10-27T10:00:00Z',
+    logs: ['Waiting for capacity'],
+  },
+  {
+    id: 'run_4',
+    name: 'Migrate orders API',
+    repository: 'api-service',
+    branch: 'feat/orders-v2',
+    status: 'failed',
+    createdAt: '2026-10-25T09:00:00Z',
+    durationSeconds: 1290,
+    logs: ['tsc --noEmit', 'Build failed with 3 type errors'],
+    result: 'Build failed: 3 type errors.',
+  },
+  {
+    id: 'run_5',
+    name: 'Lint fixes',
+    repository: 'web-platform',
+    branch: 'chore/lint',
+    status: 'failed',
+    createdAt: '2026-10-24T09:00:00Z',
+    durationSeconds: 212,
+    logs: ['eslint: 3 errors remain'],
+  },
+]
