@@ -37,11 +37,6 @@ export function Sidebar() {
         </span>
       </div>
 
-      <div className={styles.project}>
-        <span className={styles.projectLabel}>Project</span>
-        <span className={styles.projectName}>web-platform</span>
-      </div>
-
       <nav className={styles.nav} aria-label="Workspace">
         <span className={styles.navLabel}>Workspace</span>
         <ul className={styles.navList}>
